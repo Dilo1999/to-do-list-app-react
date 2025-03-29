@@ -1,24 +1,21 @@
-import logo from './logo.svg';
+// src/App.js
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import FirstScreen from './Screen/FirstScreen';
+import HomeScreen from './Screen/HomeScreen';
+import AddListScreen from './Screen/AddListScreen'; // Import AddListScreen
+
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<FirstScreen />} />
+        <Route path="/home" element={<HomeScreen />} />
+        <Route path="/add-todo" element={<AddListScreen />} /> {/* Add route for AddListScreen */}
+      </Routes>
+    </Router>
   );
 }
 
